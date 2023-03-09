@@ -13,5 +13,5 @@
 **잔디심기**가 주 목적은 아니지만 잔디 심기도 나쁘지 않은 sub quest같은 느낌이다.
 
 ## 땅땅이
-![땅땅이](/TIL/img/ddangddang.png)
+![땅땅이](/img/ddangddang.png)
 > 땅땅이는 그냥 내가 좋아해서 넣었다.
