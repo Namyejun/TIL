@@ -34,17 +34,11 @@
 
 1. **웹사이트**
 
-[gitignore.io](https://gitignore.io/)
+    [gitignore.io](https://gitignore.io/)
 
-1. **gitignore 저장소**
+2. **gitignore 저장소**
 
-[https://github.com/github/gitignore](https://github.com/github/gitignore)
-
-1. **Python에 대한 .gitignore 예시**
-    
-    ![[https://gitignore.io/](https://gitignore.io/) 에서 가져옴](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/fd7bd601-9433-418a-b08e-7b027db9a301/Untitled.png)
-    
-    [https://gitignore.io/](https://gitignore.io/) 에서 가져옴
+    [https://github.com/github/gitignore](https://github.com/github/gitignore)
 
 ### .gitignore 패턴 규칙
 1. 아무것도 없는 라인이나, `#`로 시작하는 라인은 무시합니다.
@@ -58,3 +52,27 @@
     - `[0-9]`처럼 중괄호 안에 하이픈(-)이 있는 경우 0에서 9사이의 문자 중 하나를 의미합니다.
     - `**(2개의 asterisk)`는 디렉터리 내부의 디렉터리까지 지정할 수 있습니다.
     (`a/**/z`라고 작성하면 `a/z`, `a/b/z`, `a/b/c/z` 까지 모두 영향을 끼칩니다.)
+
+ex)
+``` shell
+# .gitignore
+
+
+# 확장자가 txt인 파일 무시
+*.txt
+
+# 현재 확장자가 txt인 파일이 무시되지만, 느낌표를 사용하여 test.txt는 무시하지 않음
+!test.txt
+
+# 현재 디렉터리에 있는 TODO 파일은 무시하고, folder/TODO 처럼 하위 디렉터리에 있는 파일은 무시하지 않음
+/TODO
+
+# build/ 디렉터리에 있는 모든 파일은 무시
+build/
+
+# folder/notes.txt 파일은 무시하고 folder/child/arch.txt 파일은 무시하지 않음
+folder/*.txt
+
+# folder 디렉터리 아래의 모든 .pdf 파일을 무시
+folder/**/*.pdf
+```
