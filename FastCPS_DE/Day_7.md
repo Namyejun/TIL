@@ -1,5 +1,3 @@
-# 데이터 엔지니어링(패스트 캠퍼스)
-
 # Part4. Server(Backend) Engineering 기초
 
 ## Ch 01. 백엔드 엔지니어 되어보기 - 강의소개
