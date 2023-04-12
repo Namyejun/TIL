@@ -97,7 +97,7 @@
     - `heapq.heappop(heap)`로 삭제를 한다.
 
 - c++에서는 **bits/stdc++.h** 라이브러리에서 우선순위 큐 자료구조를 지원한다.
-    - `priority_queue<int> h;` 로 선언
+    - `priority_queue<int> h;` 로 선언한다.
     - `h.push()`, `h.pop()`로 삽입과 삭제를 한다.
 
 ---
