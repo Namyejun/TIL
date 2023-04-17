@@ -54,6 +54,7 @@ for i in range(N):
 move = [(0,1),(1,0),(0,-1),(-1,0)]
 visit = [[0 for i in range(M)] for j in range(N)]
 cnt = 0
+
 def bfs(n, m):
     x, y = n, m
     visit[x][y] = 1
