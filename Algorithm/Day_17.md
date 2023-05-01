@@ -68,5 +68,4 @@ result = sorted(upper_find)
 result.append(digit_sum)
 print(*result, sep="")
 ```
-
 ---
