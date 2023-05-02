@@ -37,5 +37,3 @@ for _ in range(M):
     left, right = map(int, input().split())
     print(lst[right] - lst[left - 1])
 ```
-
-DFS가 약하다.
