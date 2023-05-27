@@ -22,4 +22,3 @@ $SS(\alpha, \beta_1, … , \beta_k) = \displaystyle \sum_{i=1}^n (y_i -\alpha -\
 - 범주형 독립변수를 회귀모형에 포함하기 위해서는 더미변수(dummy variable) 기법을 사용
 - 더미변수는 0또는 1의 값을 갖는 변수로 아래와 같이 정의됨
     - 더미 변수의 개수 = 범주의 개수 - 1
-    
