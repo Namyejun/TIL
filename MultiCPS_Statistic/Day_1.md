@@ -52,4 +52,3 @@
         1. $P(A|B) = P(A)$
         2. $P(A \bigcap B) = P(A) \cdot P(B)$
         3. $P(B|A) = P(B)$
-    
