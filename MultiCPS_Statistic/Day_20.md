@@ -85,3 +85,4 @@ $Y_t = \beta_0 + \beta_1Y_{t-1} + \epsilon$
 - AR(1) 모델 적용 사례
     
     ![Untitled](img/Untitled%2021.png)
+    
