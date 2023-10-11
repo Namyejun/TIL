@@ -1,4 +1,4 @@
-from solution1 import solution
+from solution17 import solution
 
 if __name__ == "__main__":
-    print(solution("()()()"))
+    print(solution([1,1,1], [1,1,1,1,1,1,1,1,1,1,1,1]))
