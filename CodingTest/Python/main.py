@@ -1,9 +1,4 @@
-from solution21 import solution
+from solution22 import solution
 
 if __name__ == "__main__":
-    print(solution([[2, 4], [1, 2], [6, 8], [1, 3], [5, 7], [2, 5], [3, 6], [6, 10], [6, 9]], [0, 0, 0, 3, 0, 0, 5, 1, 2, 3]))
-    print(solution([[1, 2], [1, 3]], [0, 7, 3]))
-    print(solution([[1, 3], [1, 2]], [0, 7, 1]))
-    # print(solution([[1, 2], [1, 3], [2, 4], [2, 5], [3, 6]], [0, 0, 0, 3, 0, 3])) # [3, 3]
-    # print(solution([[1, 3], [1, 2]], [0, 1, 0]))
-    # print(solution([[1, 2], [1, 3], [1, 4], [3, 5]], [0,1,0,1,0]))
+    print(solution(["muzi", "ryan", "frodo", "neo"], ["muzi frodo", "muzi frodo", "ryan muzi", "ryan muzi", "ryan muzi", "frodo muzi", "frodo ryan", "neo muzi"]))
