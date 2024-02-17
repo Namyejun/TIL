@@ -10,31 +10,24 @@ def solution(coin, cards):
         for j in range(len(cards)):
             if pair_of_cards[i] == cards[j]:
                 idx_of_pairs.append(j)
-    
-    print(cards)
-    print(pair_of_cards)
-    print()
-    print(idx_of_cards)
-    print(idx_of_pairs)
 
-    card_set = set()
-    submit = 0
-    
+    dist = []
+    for i in range(len(cards)): # 각 짝과의 거리를 저장하는 배열
+        dist.append(idx_of_pairs[i] - idx_of_cards[i])
 
-    for i in range(len(cards)):
-        if i < len(cards)//3:
-            if pair_of_cards[i] in card_set: # 같은 짝이 패에 있을 때 제출목록으로 넘김
-                card_set.pop(pair_of_cards[i])
-                submit += 1
-            else:
-                card_set.add(cards)
-        else:
+    print(dist)
 
+    couple = 0 # 제출할 수 있는 짝의 수
+    deck = set() # 현재 보유하고 있는 카드
+    for i in range(len(cards)//3): # 1/3 전에 애들
+        deck.add(i) # 카드 획득
+        if dist[i] < 0: # 이전에 짝이 있으면 실행
+            deck.remove(i)
+            deck.remove(i + dist[i])
+            couple += 1
 
-            if i % 2 == 1 and submit > 0:
-                submit -= 1
-                answer += 1
-            else:
-                break
+    for i in range(len(cards)//3, len(cards)): # 1/3 이후
+        pass
+        
 
     return answer
