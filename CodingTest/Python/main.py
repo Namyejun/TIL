@@ -1,4 +1,4 @@
-from solution25 import solution
+from solution26 import solution
 
 if __name__ == "__main__":
     print(solution(4, [1, 1, 0, 1]) == 149)
