@@ -1,6 +1,5 @@
-from solution27 import solution
+from solution28 import solution
 
 if __name__ == "__main__":
-    print(solution([3, 2, 7, 2], [4, 6, 5, 1]) == 2)
-    print(solution([1, 2, 1, 2], [1, 10, 1, 2]) == 7)
-    print(solution([1, 1], [1, 5]) == -1)
+    print(10, 10, [[10,15,2,1,2],[20,20,3,3,4]] == 15)
+    print(0,0, [[0,0,2,1,2],[4,5,3,1,2],[4,11,4,0,2],[10,4,0,4,2]] == 13)
