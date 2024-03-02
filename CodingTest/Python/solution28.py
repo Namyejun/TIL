@@ -7,7 +7,7 @@ def solution(alp, cop, problems):
 	for prob in problems:
 		for i in range(151):
 			for j in range(151):
-				if i > prob[0] and j > prob[1]:
+				if i >= prob[0] and j > prob[1] or i > prob[0] and j >= prob[1]:
 					plans[i][j].append((prob[2], prob[3], prob[4]))
 
 	from collections import deque
@@ -40,7 +40,6 @@ def solution(alp, cop, problems):
 		for j in range(max_c, 151):
 			if answer > maps[i][j]:
 				answer = maps[i][j]
-	print(maps[10][11])
 	return answer
 
 # 문제가 뭐냐면 이게 plans를 초기화 할 때 그냥 
