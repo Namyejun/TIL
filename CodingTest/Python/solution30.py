@@ -21,6 +21,6 @@ def solution(rc, operations):
     for i in range(N):
         answer.append([l_col[i]] + list(row[i]) + [r_col[i]])
     
-    return answer
+    return answer 
 
 print(solution([[1, 2, 3], [4, 5, 6], [7, 8, 9]], ["Rotate", "ShiftRow"]))
