@@ -1,4 +1,5 @@
 # 그거 안됨 출차 안한차 계산에 넣어야함
+import math
 def solution(fees, records):
     answer = []
     table = {}
@@ -13,8 +14,11 @@ def solution(fees, records):
             in_tm = table[num]
             del table[num]
             time[num] = time[num] + calc_tm(in_tm, tm)
+    # print(time)
+    for i, j in table.items():
+        time[i] = time[i] + calc_tm(j, "23:59")
+    # print(time)
     tm_lst = sorted(time.items())
-    print(tm_lst)
     for num, t in tm_lst:
         answer.append(calc_fee(t, fees[0], fees[1], fees[2], fees[3]))
     return answer
@@ -27,6 +31,6 @@ def calc_tm(in_tm, out_tm):
 
 def calc_fee(tm, default_tm, default_fee, unit_tm, unit_fee):
     if default_tm < tm:
-        return default_fee + ((tm - default_tm)//unit_tm + 1) * unit_fee
+        return default_fee + math.ceil((tm - default_tm)/unit_tm) * unit_fee
     else:
         return default_fee
