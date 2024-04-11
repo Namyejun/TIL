@@ -7,15 +7,17 @@ def solution(info, edges):
     for i, j in edges:
         tree[i].append(j)
 
-    dfs(info, tree, [0])
+    dfs(info, tree, [0],[],0,0)
 
-    return answer
+    return max(result)
 
 def dfs(info, tree, explorerable, lst, s, w):
     if s <= w or not explorerable:
         result.append(s)
         return
     for i in explorerable:
+        if i >= len(info):
+            continue
         new_lst = lst[:]
         new_lst.append(i)
         new_exp = explorerable[:]
