@@ -7,6 +7,8 @@ def solution(info, edges):
     for i, j in edges:
         tree[i].append(j)
 
+    dfs(info, tree, [0])
+
     return answer
 
 def dfs(info, tree, explorerable, lst, s, w):
@@ -14,8 +16,11 @@ def dfs(info, tree, explorerable, lst, s, w):
         result.append(s)
         return
     for i in explorerable:
-        
         new_lst = lst[:]
         new_lst.append(i)
         new_exp = explorerable[:]
         new_exp += tree[i]
+        if info[i] == 0:
+            dfs(info, tree, new_exp, new_lst, s + 1, w)
+        else:
+            dfs(info, tree, new_exp, new_lst, s, w + 1)
