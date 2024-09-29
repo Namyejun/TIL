@@ -2,7 +2,7 @@ def solution(diffs, times, limit):
     answer = 0
     
     low = 1
-    high = 100000;
+    high = 100000
     
     while True:
         mid = (low + high) // 2
