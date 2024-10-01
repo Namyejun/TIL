@@ -17,6 +17,8 @@ def solution(points, routes):
             break
         move(robots, points)
         answer += chk_crash(robots)
+        print(robots)
+        print(answer)
     
     return answer
     
