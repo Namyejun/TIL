@@ -30,8 +30,22 @@ def solution(points, routes):
         robots.append(robot)
 
     # 일단 로봇마다의 경로는 구해놓음. 이제 시간에 따라서 충돌 구하면 됨
-    print(robots)
+    empty = 0
+    while len(routes) != empty:
+        # 충돌 위치 체크
+        crash_point = dict()
+        for i in range(len(robots)):
+            if len(robots[i]) != 0:
+                r, c = robots[i].pop(0)
+                if len(robots[i]) == 0:
+                    empty += 1
+                if (r, c) in crash_point:
+                    crash_point[(r, c)] += 1
+                else:
+                    crash_point[(r, c)] = 1
         
+        for i in crash_point.values():
+            if i >= 2:
+                answer += 1
+
     return answer
-    
-# 뭐가 틀렸을까요...
