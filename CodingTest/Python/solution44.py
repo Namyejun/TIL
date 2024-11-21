@@ -1,37 +1,33 @@
-import re
+from itertools import combinations as cb
 
-def solution(new_id):
-    answer = ''
-    while new_id != answer:
-        answer = new_id
-        new_id = str(new_id)
-        # 1
-        new_id = new_id.lower()
-        
-        # 2
-        rule = re.compile('[~!@#$%^&*()=+\[\{\]\}:?,<>/]+')
-        new_id = rule.sub('', new_id)
+def solution(orders, course):
+    answer = []
 
-        # 3
-        rule = re.compile('[.]{2,}')
-        new_id = rule.sub('.', new_id)
+    d = {}
+    for order in orders:
+        order = sorted(order)
+        for num in course:
+            for i in cb(order, num):
+                if i not in d:
+                    d[i] = 1
+                else:
+                    d[i] += 1
+    
+    cand = {i:[] for i in course}
 
-        # 4
-        rule = re.compile("^[.]")
-        new_id = rule.sub('', new_id)
-        rule = re.compile("[.]$")
-        new_id = rule.sub('', new_id)
-        
-        # 5
-        if len(new_id) == 0:
-            new_id = 'aaa'
+    for k, v in d.items():
+        if len(k) in cand:
+            cand[len(k)].append([v, ''.join(k)])
 
-        # 6
-        if len(new_id) > 15:
-            new_id = new_id[:15]
-
-        # 7
-        if len(new_id) <= 2:
-            new_id = new_id + new_id[-1]*(3 - len(new_id))
-        
-    return new_id
+    answer = []
+    for k, v in cand.items():
+        tmp = sorted(v, reverse=True)
+        if tmp and tmp[0][0] >= 2:
+            mv = tmp[0][0]
+            answer.append(tmp[0][1])
+            for n, s in tmp[1:]:
+                if n == mv:
+                    answer.append(s)
+                else:
+                    break
+    return sorted(answer)
